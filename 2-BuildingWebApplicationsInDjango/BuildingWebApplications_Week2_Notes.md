@@ -75,7 +75,7 @@
   from django.urls import path
   from . import views
   ```
-        - this finds the `views.py` file in the same directory that `urls.py` resides in
+  - this finds the `views.py` file in the same directory that `urls.py` resides in
   - Take note of other required imports in your `urls.py` file
 
 
