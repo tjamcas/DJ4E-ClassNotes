@@ -1,3 +1,11 @@
+##### **Attribution:**  
+- *This document contains my notes from the "Django for Everybody (DJ4E)" MOOC series created by Dr. Charles Severance, University of Michigan. The materials in the DJ4E courses are available under a Creative Commons License to allow for teachers to make use of these materials in their own courses.*  
+- *The following notes contain images based on the DJ4E presentation slides, also created by Dr. Severance as course resources. The notes and images in this document were assembled by me as a learning aid to supplement the course content and as a reference for completing the course assignments and quizzes.*
+
+*My notes represent my interpretation of the DJ4E course videos, transcripts and presentation slides.* ***Any content errors or omissions in these notes should be attributed to me, as the note-taker.***
+
+
+
 # Django for Everybody
 
 ## Course #2: Building Web Applications in Django
@@ -7,20 +15,19 @@
 #### Django for Everybody Introduction
 
 Other Python-based web frameworks:
-
 -	Flask
-  - Django is better to learn first, and Flask can be learned afterwards
+    - Django is better to learn first, and Flask can be learned afterwards
 -	Sanic
-  - More specialized
+    - More specialized
 -	Web2py
-  - mentioned as another framework
+    - mentioned as another framework
 -	Django and Python’s shortcomings in web development will be addressed through future releases – because people want to code in Python
 
 For debugging:
 -	Use Firefox or Chrome
 -	Safari is not recommended – it’s developer view hides too much information
 
-Setting up PythonAnywhere with Django and how to resolve common errors/problems
+Setting up PythonAnywhere with Django and how to resolve common errors/problems:
 - Get supplemental instructions (and troubleshooting tips), from the DJ4E website, to install Django on PythonAnywhere at:
   - <https://www.dj4e.com/assn/dj4e_tutpaw.md>
 
@@ -32,6 +39,17 @@ Mapping Django architecture to Model-View-Controller structure:
 -	Controller:  `urls.py` and some of `views.py` both inform the controller. `urls.py` determines routing of what view to display next. `urls.py` and `views.py` decide what happens next as the web server/application responds to the user during the request-response cycle.
 -	Model: `models.py` defines the persistent storage (i.e., database) of the application
 -	View: `views.py` (performs both a Controller and a View functions), along with templates and `forms.py`, produces the output and sends it out.
+
+
+#### Supplement: Django Directory and File Structure
+
+![Django Folder Structure](images/Django-Project-App-Directory-Structure.png)
+
+
+![Django `/home` Folder Structure](images/Django-home-Directory-Structure.png)
+
+
+![Django Web Application Folder Structure](images/Django-Application-Directory-Structure.png)
 
 
 #### Django Data Models
@@ -70,6 +88,7 @@ Performing C-R-U-D manipulations on the database using the table class data attr
 - Update examples on User database table:
   - `User.objects.filter(email='csev@umich.edu').update(name='Charles')`
 
+
 #### Django Data Models
 
 `models.py` is used to create migrations files
@@ -81,7 +100,7 @@ makemigrations
 -	Automatically generate the migration files used to create the SQL database files
 -	python shell command:
   - `python manage.py makemigrations`
--	The above command in a python shell will create the SQL database file with the structure that the programmer specified in `models.py`.
+-	The above command in a python shell will generate instructions to create the SQL database file with the structure that the programmer specified in `models.py`.
 -	The migration files reside in the "migrations" subfolder of the application folder. e.g. `\~/polls/migrations/0001_initial.py`, `\~/polls/migrations/0002_initial.py`, etc.
 -	The migration files are NOT the database, and are NOT SQL, but they ARE the instructions for making the application’s database.
 
@@ -91,7 +110,7 @@ migrate
 -	Python shell command:
   - `python manage.py migrate`
 -	initiates activities to apply the migrations files, e.g. `0001_initial.py`, to make or change the database structure of the application.
--	By applying the init migrations files, - which are python files/programs - SQL commands in the init files are executed in whatever SQL platform runs in your environment. It could be a sqlite3 environment in DEV, and an Oracle SQL environment in PROD.
+-	By applying the init migrations files - which are python files/programs - SQL commands in the init files are executed in whatever SQL platform runs in your environment. It could be a sqlite3 environment in DEV, and an Oracle SQL environment in PROD.
 -	The Django shell will handle any unique requirements or syntax to interface with the SQL platform in the application environment. The python-based init files and their internal commands, which use the Object Relationship Mapper, will work with all the SQL platforms - you can copy your `models.py` and migrations files from DEV to PROD without modification.
 
 settings.py
@@ -114,3 +133,13 @@ Database re-build
 -	In sqlite3, you would delete (`rm`) `db.sqlite3`.
 -	Deletion of `db.sqlite3` will erase the database and all its data.
 -	It also wipes out any admin accounts that you created - these will have to be manually created again.
+
+
+##### Postscript attributions:
+
+*The Django for Everybody course and slides are Copyright 2019-  Charles R. Severance (www.dr-chuck.com) as part of www.dj4e.com and made available under a Creative Commons Attribution 4.0 License.  Please maintain this postscript in all copies of the document to comply with the attribution requirements of the license.  If you make a change, feel free to add your name and organization to the list of contributors on this page as you republish the materials.*
+
+*Initial Development: Charles Severance, University of Michigan School of Information*
+
+*Insert new Contributors and Translators here including names and dates:*  
+*Tim Castle, January 2022*
