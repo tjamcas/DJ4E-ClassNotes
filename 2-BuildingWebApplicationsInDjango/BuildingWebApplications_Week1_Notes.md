@@ -63,11 +63,11 @@ Object Relational Mapping (ORM)
 -	ORM allows the developer to have multiple/different databases for their DEV, QA, and PROD environment because Django ORM code knows/interprets the differences between SQLite, Postgres, and MySQL. This allows the developer to start an application using SQLite in DEV, and moving to MySQL or Postgres in PROD.
 
 Creating `models.py`:
--	By creating `models.py`, we are creating the data model for the applications SQL database structure
+-   By creating `models.py`, we are creating the data model for the applications SQL database structure
 -	`models.py` has to import the “models” library from the Django file `django.db`. In `models.py`:
-  - `from django.db import models`
+    - `from django.db import models`
 -	To create a table in the ORM, the developer creates a class that extends (i.e., inherits from) the `django.db` `models.Model` superclass. For example, in `models.py`:
-  - `class User(models.Model)`
+    - `class User(models.Model)`
 
 Performing C-R-U-D manipulations on the database using the table class data attributes and methods:
 - for instructions on how to open a Django shell go to: <https://www.dj4e.com/lectures/DJ-02-Model-Single.txt>
@@ -108,7 +108,7 @@ makemigrations
 migrate
 -	Automatically activate the migration files to generate the SQL database
 -	Python shell command:
-  - `python manage.py migrate`
+    - `python manage.py migrate`
 -	initiates activities to apply the migrations files, e.g. `0001_initial.py`, to make or change the database structure of the application.
 -	By applying the init migrations files - which are python files/programs - SQL commands in the init files are executed in whatever SQL platform runs in your environment. It could be a sqlite3 environment in DEV, and an Oracle SQL environment in PROD.
 -	The Django shell will handle any unique requirements or syntax to interface with the SQL platform in the application environment. The python-based init files and their internal commands, which use the Object Relationship Mapper, will work with all the SQL platforms - you can copy your `models.py` and migrations files from DEV to PROD without modification.
