@@ -54,7 +54,7 @@ Cookie Definition: HTTP cookies (also called web cookies, Internet cookies, brow
         return resp
     ```    
 
-        -	In this example, the session identifier cookie, ‘sessionid’, cookie would also be stored in the HttpResponse.COOKIE attribute.    
+      -	In this example, the session identifier cookie, ‘sessionid’, cookie would also be stored in the HttpResponse.COOKIE attribute.    
 
 
 
