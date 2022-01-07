@@ -120,38 +120,38 @@
             -	More documentation on `__init__.py` can be found with an online search but it is no longer needed in python 3.3.
         -	In the `/ProjectName/scripts` folder, write your python script program
             -	e.g., in `/dj4e-samples/scripts/cats_load.py`
-                    ```
-                    import csv  # https://docs.python.org/3/library/csv.html
+                ```
+                import csv  # https://docs.python.org/3/library/csv.html
 
-                    # https://django-extensions.readthedocs.io/en/latest/runscript.html
+                # https://django-extensions.readthedocs.io/en/latest/runscript.html
 
-                    # python3 manage.py runscript cats_load
+                # python3 manage.py runscript cats_load
 
-                    from cats.models import Cat, Breed
+                from cats.models import Cat, Breed
 
-                    def run():
-                        fhand = open('cats/meow.csv')
-                        reader = csv.reader(fhand)
-                        next(reader)  # Advance past the header
+                def run():
+                    fhand = open('cats/meow.csv')
+                    reader = csv.reader(fhand)
+                    next(reader)  # Advance past the header
 
-                        Cat.objects.all().delete()
-                        Breed.objects.all().delete()
+                    Cat.objects.all().delete()
+                    Breed.objects.all().delete()
 
-                        # Name,Breed,Weight
-                        # Abby,Sphinx,6.4
-                        # Annie,Burmese,7.6
-                        # Ash,Manx,7.8
-                        # Athena,Manx,8.9
-                        # Baby,Tabby,6.9
+                    # Name,Breed,Weight
+                    # Abby,Sphinx,6.4
+                    # Annie,Burmese,7.6
+                    # Ash,Manx,7.8
+                    # Athena,Manx,8.9
+                    # Baby,Tabby,6.9
 
-                        for row in reader:
-                            print(row)
+                    for row in reader:
+                        print(row)
 
-                            b, created = Breed.objects.get_or_create(name=row[1])
+                        b, created = Breed.objects.get_or_create(name=row[1])
 
-                            c = Cat(nickname=row[0], breed=b, weight=row[2])
-                            c.save()
-                    ```
+                        c = Cat(nickname=row[0], breed=b, weight=row[2])
+                        c.save()
+                ```
             -	`next(reader)  # Advance past the header`
                 -	Moves the CSV reader past the header row of titles
             -	`b, created = Breed.objects.get_or_create(name=row[1])`
