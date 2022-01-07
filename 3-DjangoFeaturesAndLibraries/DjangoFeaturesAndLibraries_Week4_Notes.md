@@ -28,7 +28,7 @@
 
 -	If you were start with a single flat table of all your application data, then you look for where you have vertical replication of data – i.e. repeating of data in the columns
     -	This is where you will want to represent the replicated data once in a single table and provide links between tables
-    -	Removal of the replication of data results in a performance advantage, a storage advantage and it modifiability advantage (there's only one place where you need to go to update the data).
+    -	Removal of the replication of data results in a performance advantage, a storage advantage and a modifiability advantage (there's only one place where you need to go to update the data).
 -	In a picture of our database model, tables are represented by boxes (with the columns/attributes listed) and links are represented by lines
     -	The lines are arrows and use the following legend at the start and end of each arrow to represent their cardinality
         -	1		One
@@ -44,7 +44,7 @@
     -	We can auto-increment the primary key index to increase performance
 -	The foreign key is the column that we add to a table so that we can point to a row in another table.
     -	The foreign key is where we will start a link arrow
-    -	By convention, the name of the foreign key column is the name of the table to which it point followed by “_id”.
+    -	By convention, the name of the foreign key column is the name of the table to which it points followed by “_id”.
 
 
 #### Representing One-to-Many Models in Django
@@ -67,7 +67,7 @@
             due_back = models.DateField(null=True, blank=True)
         ```
     -	Remember, these are the instructions for how to create a SQL database for your application – this is not the actual SQL syntax
-    -	Django will automatically include the instructions add the “id” field to a table
+    -	Django will automatically include the instructions to add the “id” field to a table
     -	Django will automatically include the instructions for a foreign key so that the field uses the naming convention of the table to which you are linking followed by “_id”
     -	`null=True`  allows the field to be empty
     -	`on_delete=models.SET_NULL` indicates that if the foreign key value is deleted in the linked table, then set the foreign key in this table to NULL
@@ -77,13 +77,13 @@
 #### Using the Django Shell to Explore One-to-Many Models
 
 -	To run the Django shell type: `python manage.py shell`
-    -	In creating the Django shell, this command causes the settings.py file to be read for all the listed applications, preloads the applications, and then gives you a shell.
+    -	In creating the Django shell, this command causes the `settings.py` file to be read for all the listed applications, preloads the applications, and then gives you a shell.
 
 
 #### Loading One-to-Many Data using a Django Batch Script
 
 -	Assume you have some source of data, perhaps in .CSV format, and you want to rad and put it into the database – but not manually by hand. here is how you write a script to load data into your Django models after you define those Django models.
--	Running scripts is part of a feature of Django called the Django extensions.
+-	Running scripts is part of a feature of Django called Django extensions.
     -	Go into your virtual environment and type: `pip3 install django-extensions`
     -	After you install it, you have to put a link into your `settings.py`, specifically
         -	`ProjectName/ProjectName/settings.py`
