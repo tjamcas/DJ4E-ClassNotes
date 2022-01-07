@@ -82,7 +82,7 @@
 
 #### Loading One-to-Many Data using a Django Batch Script
 
--	Assume you have some source of data, perhaps in .CSV format, and you want to rad and put it into the database – but not manually by hand. here is how you write a script to load data into your Django models after you define those Django models.
+-	Assume you have some source of data, perhaps in .CSV format, and you want to read and put it into the database – but not manually by hand. here is how you write a script to load data into your Django models after you define those Django models.
 -	Running scripts is part of a feature of Django called Django extensions.
     -	Go into your virtual environment and type: `pip3 install django-extensions`
     -	After you install it, you have to put a link into your `settings.py`, specifically
