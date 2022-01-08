@@ -58,7 +58,7 @@ We cannot directly create a many-to-many relationship within a relational databa
 One pattern of a “through” table is the “member” table. A member through table adds a role to each many to many relationship.
 -	In this example, educational systems are modeled where we have a many-to-many relationship between people and courses.
 -	A course can have many people and a person can be in many courses.
--	However, people have roles within that many-to-many relationship: some people are student, others are teachers, and other people are administrators.    
+-	However, people have roles within that many-to-many relationship: some people are students, others are teachers, and other people are administrators.    
 
 ![Many-to-Many Through Table Roles](images/Many2ManyThroughTableRoles.png)
 -	In Django, the `/dj4e-samples/many/models.py` file looks like:
@@ -126,9 +126,9 @@ The following python file is a script to read the rows of a CSV file and iterati
 -	A good file and folder convention is to load your script files in the folder: `/projectName/scripts`
 -	For a script to load, you must do the following steps when setting up your Django environment:
   1.	Edit `requirements.txt`: call the Django extensions in `/projectName/requirements.txt` by including this line:
-  •	`django-extensions>=2.2.5`
+        - `django-extensions>=2.2.5`
   2.	Perform a pip install with `requirements.txt` – do this from a console while in your `/projectName` folder:
-  •	`pip install -r requirements.txt`
+        - `pip install -r requirements.txt`
   3.	After you install it, edit the `/projectName/projectName/settings.py` folder and add `django_extensions` into `INSTALLED_APPS`:
           ```
           INSTALLED_APPS = [
@@ -145,8 +145,8 @@ The following python file is a script to read the rows of a CSV file and iterati
           ```
   4.	Reload the web server on PythonAnywhere
   5.	Make a `/scripts` folder from the `/projectName` folder in the console and create the file `/projectName/scripts/_ Init_.py`  -- this file designates that the folder which it resides in contains modules that are suitable for importing:
-      -	`mkdir scripts`
-      -	`touch scripts/__init__.py`
+        -	`mkdir scripts`
+        -	`touch scripts/__init__.py`
 -	`/dj4e-samples/scripts/many_load.py`
     ```
     import csv  # https://docs.python.org/3/library/csv.html
