@@ -120,59 +120,59 @@ Here are the steps for creating an owned row in Django:
         -	For the `ArticleCreateView()` and `ArticleUpdateView()` classes, we are specifying that the form to be displayed will have two fields: “title” and “text” – the “owner” field is purposefully omitted (along with the “created_at” and “updated_at” fields)
 
 -	Third, we extend the Django generic views in owner.py:
-  -	`/projectName/appName/owner.py`, e.g.,
-  -	`/dj4e-samples/myarts/owner.py`
-        ```
-        from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
+      -	`/projectName/appName/owner.py`, e.g.,
+      -	`/dj4e-samples/myarts/owner.py`
+            ```
+            from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
 
-        from django.contrib.auth.mixins import LoginRequiredMixin
+            from django.contrib.auth.mixins import LoginRequiredMixin
 
-        class OwnerListView(ListView):
-            """
-            Sub-class the ListView to pass the request to the form.
-            """
+            class OwnerListView(ListView):
+                """
+                Sub-class the ListView to pass the request to the form.
+                """
 
-        class OwnerDetailView(DetailView):
-            """
-            Sub-class the DetailView to pass the request to the form.
-            """
+            class OwnerDetailView(DetailView):
+                """
+                Sub-class the DetailView to pass the request to the form.
+                """
 
-        class OwnerCreateView(LoginRequiredMixin, CreateView):
-            """
-            Sub-class of the CreateView to automatically pass the Request to the Form
-            and add the owner to the saved object.
-            """
-            # Saves the form instance, sets the current object for the view, and redirects to get_success_url().
-            def form_valid(self, form):
-                # print('form_valid called')
-                object = form.save(commit=False)
-                object.owner = self.request.user
-                object.save()
-                return super(OwnerCreateView, self).form_valid(form)
+            class OwnerCreateView(LoginRequiredMixin, CreateView):
+                """
+                Sub-class of the CreateView to automatically pass the Request to the Form
+                and add the owner to the saved object.
+                """
+                # Saves the form instance, sets the current object for the view, and redirects to get_success_url().
+                def form_valid(self, form):
+                    # print('form_valid called')
+                    object = form.save(commit=False)
+                    object.owner = self.request.user
+                    object.save()
+                    return super(OwnerCreateView, self).form_valid(form)
 
-        class OwnerUpdateView(LoginRequiredMixin, UpdateView):
-            """
-            Sub-class the UpdateView to pass the request to the form and limit the
-            queryset to the requesting user.
-            """
+            class OwnerUpdateView(LoginRequiredMixin, UpdateView):
+                """
+                Sub-class the UpdateView to pass the request to the form and limit the
+                queryset to the requesting user.
+                """
 
-            def get_queryset(self):
-                # print('update get_queryset called')
-                """ Limit a User to only modifying their own data. """
-                qs = super(OwnerUpdateView, self).get_queryset()
-                return qs.filter(owner=self.request.user)
+                def get_queryset(self):
+                    # print('update get_queryset called')
+                    """ Limit a User to only modifying their own data. """
+                    qs = super(OwnerUpdateView, self).get_queryset()
+                    return qs.filter(owner=self.request.user)
 
-        class OwnerDeleteView(LoginRequiredMixin, DeleteView):
-            """
-            Sub-class the DeleteView to restrict a User from deleting other
-            user's data.
-            """
+            class OwnerDeleteView(LoginRequiredMixin, DeleteView):
+                """
+                Sub-class the DeleteView to restrict a User from deleting other
+                user's data.
+                """
 
-            def get_queryset(self):
-                print('delete get_queryset called')
-                qs = super(OwnerDeleteView, self).get_queryset()
-                return qs.filter(owner=self.request.user)
-        ```
+                def get_queryset(self):
+                    print('delete get_queryset called')
+                    qs = super(OwnerDeleteView, self).get_queryset()
+                    return qs.filter(owner=self.request.user)
+            ```
     -	`OwnerUpdateView()` Notes:
         -	In this class we inherit the Django generic view, `UpdateView()`, and augment its `get_queryset()` method
         -	class `OwnerUpdateView(LoginRequiredMixin, UpdateView)` is a guardian pattern that ensures a user is logged into the application  (by specifying `LoginRequiredMixin`) before we allow them to even attempt to edit a data set.
@@ -180,7 +180,7 @@ Here are the steps for creating an owned row in Django:
             -	`qs = super(OwnerUpdateView, self).get_queryset()`
         -	We are returning `qs` after first filtering to ensure that the record(s) owner is the user – otherwise the user will get a 404 error
             -	`return qs.filter(owner=self.request.user)`
-        -	These notes for `OwnerUpdateView()` also apply to `OwnerDetailView()` – the same pattern is followed in both classes.
+        -	These notes for `OwnerUpdateView()` also apply to `OwnerDeleteView()` – the same pattern is followed in both classes.
     -	`OwnerCreateView()` Notes
         -	In this class we inherit the Django generic view, `CreateView()`, and augment its `form_valid()` method
         -	The generic `form_valid()` method in the Django generic `CreateView()` looks at the data in a form, and makes sure that the data follows the rules for each field – e.g., field type, length or size, any developer defined criteria.
@@ -212,7 +212,7 @@ Here are the steps to applying Crispy forms:
 
 -	**First**, when setting up your virtual python environment
     -	Edit a `requirements.txt` file to include latest version of  `django-crispy-forms`
-    -	The file will reside in the project folder, e.g. `/dj4e-sample`s or `/projName`
+    -	The file will reside in the project folder, e.g. `/dj4e-samples` or `/projName`
         ```
         # To activate this run
         #
@@ -309,7 +309,7 @@ Here are the steps to applying Crispy forms:
 We can inherit or extend html template files using Django Template Language
 -	As the basis of all our HTML templates, we can start with `/projectName/appName/home/template/base_bootstrap.html` file
   -	We can place the file in any folder with any name, as long as we use the correct path and name to reference it
-  -	However, the naming convention above, can help organize the app’s file structure
+  -	However, use of the above file naming and directory structure convention will help organize the app’s overall file structure
 
 ![HTML template inheritance](images/HTMLFileInheritanceBootstrap.png)
 
