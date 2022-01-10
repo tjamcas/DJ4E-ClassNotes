@@ -22,7 +22,7 @@ In an HTTP Response, the web server sends HTML and JavaScript code to the client
 
 The DOM is referenced as the “document” and, as you would expect from an object ,has attributes and methods. The DOM is a hierarchical set of trees and tags. The concept of ID fields was defined so that the DOM tree structure could be more easily navigated. An ID field can be placed on a tag and then used to access that tag’s contents.
 -	document.getElementById('idName')
-    -	this method gets the tag element that has an id=”idName”
+    -	this method gets the tag element that has an `id=”idName”`
 -	document.getElementById('idName').innerHTML
     -	innerHTML is the text string between the tags of the element associated with id=”idName”
     -	Example:
@@ -38,10 +38,10 @@ The DOM is referenced as the “document” and, as you would expect from an obj
         document.getElementById('person').innerHTML = 'Joseph';
         </script>
         ```
-        -	`var st = document.getElementById('person').innerHTML;`    
-            At this point, st is a local string variable with a value of “Chuck”
+        -	`var st = document.getElementById('person').innerHTML;`  
+        At this point, st is a local string variable with a value of “Chuck”
         -	`document.getElementById('person').innerHTML = 'Joseph';`    
-            This changes the DOM, and the browser client will now display “Joseph” instead of “Chuck”.
+        This changes the DOM, and the browser client will now display “Joseph” instead of “Chuck”.
 -	JavaScript can be used to add elements into the DOM
     -	Example:
         ```
@@ -63,7 +63,7 @@ The DOM is referenced as the “document” and, as you would expect from an obj
         }
         </script>
         ```
-            -	The JavaScript code incrementally adds an li list item to the ul unordered list when the “More” anchor tag is clicked.
+        -	The JavaScript code incrementally adds an `li` list item to the `ul` unordered list when the “More” anchor tag is clicked.
 
 
 #### Using JQuery
