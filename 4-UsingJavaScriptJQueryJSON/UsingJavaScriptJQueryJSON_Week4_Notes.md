@@ -53,6 +53,19 @@
             - it is convention in JSON that the outer wrapper be an object - in this case a dictionary. `stuff` could have been placed in a list, but it is best practice to wrap the list in a dictionary.
             - In the headers of a `JsonResponse`, `content-type = application/json`
 
+#### Walkthrough: DJ4E JSON (chat) Sample Code
+
+##### File Flow for Chat Application View (first of 2 images) with Polling through JQuery Script
+
+![Chat Application Views - 1 of 2](images/FileFlowChatAppPolling1.png)
+
+##### File Flow for Chat Application View (second of 2 images) with Polling through JQuery Script
+
+![Chat Application Views - 1 of 2](images/FileFlowChatAppPolling2.png)
+
+##### Chat Application File Excerpt From `talk.html` of JQuery Polling Script
+
+![Chat Application Views - 1 of 2](images/TalkHTMLPollingExcerpt.png)
 
 
 ##### Postscript attributions:
