@@ -43,9 +43,8 @@
                     }
                 }
         ```
-                - Notice that the method definition invokes the keyword `function`, but unlike the use of `function` for the class name, this invocation of `function` is unnamed.
-
-    -	For example:
+- Notice that the method definition invokes the keyword `function`, but unlike the use of `function` for the class name, this invocation of `function` is unnamed.
+- For example:
         ```
         function PartyAnimal(nam) {
             this.x = 0;
@@ -63,7 +62,7 @@
         j.party();
         s.party();
         ```
-            -	the keyword `new` is used to create a new instance of a class – i.e., create an object
+-	the keyword `new` is used to create a new instance of a class – i.e., create an object
 
 
 -	You may see JavaScript  code that has different syntax from the form and example above – be aware that the code may have been written with ES6
