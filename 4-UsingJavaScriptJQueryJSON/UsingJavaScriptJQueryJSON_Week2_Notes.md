@@ -19,7 +19,7 @@
 -	Attribute - A defined data item in a class – AKA fields, properties
 -	Object - A particular instance of a class – AKA instance
 -	State – state of an object, the set of values of an object’s attributes
--	In JavaScript, the function keyword returns a value which is the function itself
+-	In JavaScript, the `function` keyword returns a value which is the function itself
 
 
 #### JavaScript Object Oriented Classes
