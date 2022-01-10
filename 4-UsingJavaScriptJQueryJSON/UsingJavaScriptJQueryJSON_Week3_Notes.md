@@ -75,23 +75,23 @@ JQuery is a JavaScript library that interacts with the Document Object Model (DO
     -	Vanilla JavaScript refers to JavaScript that does not use JQuery
 -	Pattern for using JQuery in HTML and JavaScript webpage:
     1.	Reference the JQuery library inside your HTML file using a script tag:
-        ```
-        <script type="text/javascript" src="jquery.min.js">
-        </script>
-        ```
-            -	Although this could be loaded in the <head>, it is best practice to load it at the end of the <body> element so that your web page loads faster by downloading the called libraries last.
+    ```
+    <script type="text/javascript" src="jquery.min.js">
+    </script>
+    ```
+        -	Although this could be loaded in the <head>, it is best practice to load it at the end of the <body> element so that your web page loads faster by downloading the called libraries last.
 
     2.	Create a second script tag and invoke the JQuery library with the “$” function
-      ```
-      <script type="text/javascript">
-      $(elementName).eventName(function(){
-        …
-        // Insert JavaScript and JQuery code inside braces {…}
-        …
-      });
-      </script>
-      ```
-              -	$ is the name of the jQuery function – remember that JavaScript functions can begin with “$”.    
+    ```
+    <script type="text/javascript">
+    $(elementName).eventName(function(){
+      …
+      // Insert JavaScript and JQuery code inside braces {…}
+      …
+    });
+    </script>
+    ```
+        -	$ is the name of the jQuery function – remember that JavaScript functions can begin with “$”.    
 
 
 -	Example #1:
