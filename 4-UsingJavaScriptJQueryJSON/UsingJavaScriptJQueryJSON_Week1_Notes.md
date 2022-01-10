@@ -14,7 +14,7 @@
 
 #### JavaScript Overview and History
 
--	Java Script is in the syntax family of Java
+-	JavaScript is in the syntax family of Java
     -	It uses semicolons to end statements and left and right curly braces to start and end code blocks
 -	Despite its name, Java Script has more in common with C programming language than with Java
 -	JavaScript runs in the client browser and manipulates the Document Object Model
@@ -118,18 +118,20 @@
         -	`script.js`:
             ```
             document.write("<p>Hello World</p>");
-                    -	js-04.htm:
-            <html>
-            <head>
-            <title>Hello World</title>
-            <meta charset="utf-8"/>
-            </head>
-            <body>
-            <p>One Paragraph</p>
-            <script type="text/javascript" src="script.js"></script>
-            <p>Third Paragraph</p>
-            </body>
-            </html>
+            ```
+-   `js-04.htm`:
+            ```
+                <html>
+                <head>
+                <title>Hello World</title>
+                <meta charset="utf-8"/>
+                </head>
+                <body>
+                <p>One Paragraph</p>
+                <script type="text/javascript" src="script.js"></script>
+                <p>Third Paragraph</p>
+                </body>
+                </html>
             ```
 -	Debugging for Syntax Errors
     -	When parsing the JavaScript code, e.g., in a .js file, as the browser client executes the JavaScript code block (the code that is parsed between the `<script>` tags, and if it runs into a syntax error, it will stop execution of that code block and throw an error message to the console.
