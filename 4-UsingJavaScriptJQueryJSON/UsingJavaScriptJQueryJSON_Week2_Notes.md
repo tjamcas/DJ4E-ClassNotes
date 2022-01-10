@@ -25,43 +25,43 @@
 #### JavaScript Object Oriented Classes
 
 -	In JavaScript, the `function` keyword is used to define a class    
-            ```
-            function ClassName(arg1, …, argN) {
-                // Declare the class attributes
-                this.attributeName0 = 0;
-                // ”this” refers to the instance variable that is
-                // constructing this class object
-                this.attributeName1 = arg1;
-                …
-                this.attributeNameN = argN;
-                …
-                codeBlock;    
-                    
-                // Define the class methods
-                this.methodName = function () {
-                    codeBlock;
-                }
-            }
-            ```    
+      ```
+      function ClassName(arg1, …, argN) {
+          // Declare the class attributes
+          this.attributeName0 = 0;
+          // ”this” refers to the instance variable that is
+          // constructing this class object
+          this.attributeName1 = arg1;
+          …
+          this.attributeNameN = argN;
+          …
+          codeBlock;    
+
+          // Define the class methods
+          this.methodName = function () {
+              codeBlock;
+          }
+      }
+      ```    
       - Notice that the method definition invokes the keyword `function`, but unlike the use of `function` for the class name, this invocation of `function` is unnamed.
 - For example:    
-          ```
-          function PartyAnimal(nam) {
-              this.x = 0;
-              this.name = nam;
-              console.log("Built "+nam);
-              this.party = function () {
-                  this.x = this.x + 1;
-                  console.log(nam+"="+this.x);
-              }
-          }
-          s = new PartyAnimal("Sally");
-          s.party();    
+    ```
+    function PartyAnimal(nam) {
+        this.x = 0;
+        this.name = nam;
+        console.log("Built "+nam);
+        this.party = function () {
+            this.x = this.x + 1;
+            console.log(nam+"="+this.x);
+        }
+    }
+    s = new PartyAnimal("Sally");
+    s.party();    
 
-          j = new PartyAnimal("Jim");
-          j.party();
-          s.party();
-          ```    
+    j = new PartyAnimal("Jim");
+    j.party();
+    s.party();
+    ```    
     -	the keyword `new` is used to create a new instance of a class – i.e., create an object
 
 
