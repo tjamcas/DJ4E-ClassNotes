@@ -32,25 +32,25 @@
                 "C++": 5, "python" : 7 }
         };
         ```
-      - In the example above, to access the number "10" in the "skills" dictionary using JSON syntax: `who.skills.c`.
-      Everything between the curly braces is JSON.
--JSON Syntax - server-side
+      - In the example above, to access the number "10" in the "skills" dictionary using JSON syntax: `who.skills.C`.
+      - Everything between the curly braces is JSON.
+- JSON Syntax - server-side
     - Example:
         - `urls.py`:    
               `path('jsonfun', views.jsonfun, name= 'jsonfun')`
         - `views.py`:
-              ```
-              from django.http import JsonResponse
-              ...
-              def jsonfun(request):
-                  stuff = {
-                      'first': 'first thing',
-                      'second': 'second thing'
-                  }
-                  return JsonResponse(stuff)
-              ```
+          ```
+          from django.http import JsonResponse
+          ...
+          def jsonfun(request):
+              stuff = {
+                  'first': 'first thing',
+                  'second': 'second thing'
+              }
+              return JsonResponse(stuff)
+          ```
             - `stuff` is a python dictionary, and the dictionary is in JSON.
-            - it convention in JSON that the outer wrapper be an object - in this case a dictionary. `stuff` could have been placed in a list, but it is best practice to wrap the list in a dictionary.
+            - it is convention in JSON that the outer wrapper be an object - in this case a dictionary. `stuff` could have been placed in a list, but it is best practice to wrap the list in a dictionary.
             - In the headers of a `JsonResponse`, `content-type = application/json`
 
 
