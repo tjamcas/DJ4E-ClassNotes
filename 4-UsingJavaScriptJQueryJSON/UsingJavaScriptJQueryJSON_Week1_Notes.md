@@ -121,8 +121,8 @@
             ```
 -   `js-04.htm`:
             ```
-                <html>
-                <head>
+                <html>    
+                <head>  
                 <title>Hello World</title>
                 <meta charset="utf-8"/>
                 </head>
@@ -189,7 +189,7 @@
     -	e.g., the expression: x = ("fred" * 1) + 10
     -	evaluates to “Not a Number: NaN
 -	NaN: If a string cannot be converted to a number, you end up with “Not a Number” or “NaN”.  It is a value, but it is sticky - all operations with NaN as a operand end up with NaN.
--	JavaScript provides a unary typeof operator that returns the type of a variable or constant as a string.
+-	JavaScript provides a unary `typeof` operator that returns the type of a variable or constant as a string.
 
 
 #### JavaScript Functions and Arrays
