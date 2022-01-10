@@ -35,7 +35,7 @@
                     …
                     this.attributeNameN = argN;
                     …
-                    codeBlock;
+                    codeBlock;    
 
                     // Define the class methods
                     this.methodName = function () {
@@ -46,21 +46,21 @@
 - Notice that the method definition invokes the keyword `function`, but unlike the use of `function` for the class name, this invocation of `function` is unnamed.
 - For example:
         ```
-        function PartyAnimal(nam) {
-            this.x = 0;
-            this.name = nam;
-            console.log("Built "+nam);
-            this.party = function () {
-                this.x = this.x + 1;
-                console.log(nam+"="+this.x);
-            }
-        }
-        s = new PartyAnimal("Sally");
-        s.party();
+                function PartyAnimal(nam) {
+                    this.x = 0;
+                    this.name = nam;
+                    console.log("Built "+nam);
+                    this.party = function () {
+                        this.x = this.x + 1;
+                        console.log(nam+"="+this.x);
+                    }
+                }
+                s = new PartyAnimal("Sally");
+                s.party();    
 
-        j = new PartyAnimal("Jim");
-        j.party();
-        s.party();
+                j = new PartyAnimal("Jim");
+                j.party();
+                s.party();
         ```
 -	the keyword `new` is used to create a new instance of a class – i.e., create an object
 
