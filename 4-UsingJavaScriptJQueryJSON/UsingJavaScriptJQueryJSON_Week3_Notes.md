@@ -79,7 +79,7 @@ JQuery is a JavaScript library that interacts with the Document Object Model (DO
     <script type="text/javascript" src="jquery.min.js">
     </script>
     ```
-        -	Although this could be loaded in the <head>, it is best practice to load it at the end of the <body> element so that your web page loads faster by downloading the called libraries last.
+    -	Although this could be loaded in the `<head>`, it is best practice to load it at the end of the `<body>` element so that your web page loads faster by downloading the called libraries last.
 
     2.	Create a second script tag and invoke the JQuery library with the “$” function
     ```
@@ -91,7 +91,7 @@ JQuery is a JavaScript library that interacts with the Document Object Model (DO
     });
     </script>
     ```
-        -	$ is the name of the jQuery function – remember that JavaScript functions can begin with “$”.    
+    -	$ is the name of the jQuery function – remember that JavaScript functions can begin with “$”.    
 
 
 -	Example #1:
