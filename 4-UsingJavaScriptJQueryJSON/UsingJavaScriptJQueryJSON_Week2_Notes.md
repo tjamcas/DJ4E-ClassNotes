@@ -36,7 +36,7 @@
                 this.attributeNameN = argN;
                 …
                 codeBlock;    
-
+                    
                 // Define the class methods
                 this.methodName = function () {
                     codeBlock;
@@ -57,7 +57,7 @@
           }
           s = new PartyAnimal("Sally");
           s.party();    
-          
+
           j = new PartyAnimal("Jim");
           j.party();
           s.party();
