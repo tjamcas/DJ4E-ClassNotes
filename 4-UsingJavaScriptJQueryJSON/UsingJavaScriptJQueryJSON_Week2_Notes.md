@@ -57,7 +57,7 @@
           }
           s = new PartyAnimal("Sally");
           s.party();    
-
+          
           j = new PartyAnimal("Jim");
           j.party();
           s.party();
