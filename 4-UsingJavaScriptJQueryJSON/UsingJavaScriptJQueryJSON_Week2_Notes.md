@@ -24,26 +24,26 @@
 
 #### JavaScript Object Oriented Classes
 
--	In JavaScript, the function keyword is used to define a class
-    ```
-    function ClassName(arg1, …, argN) {
-        // Declare the class attributes
-        this.attributeName0 = 0;
-        // ”this” refers to the instance variable that is
-        // constructing this class object
-        this.attributeName1 = arg1;
-        …
-        this.attributeNameN = argN;
-        …
-        codeBlock;
-
-        // Define the class methods
-        this.methodName = function () {
+-	In JavaScript, the `function` keyword is used to define a class
+        ```
+        function ClassName(arg1, …, argN) {
+            // Declare the class attributes
+            this.attributeName0 = 0;
+            // ”this” refers to the instance variable that is
+            // constructing this class object
+            this.attributeName1 = arg1;
+            …
+            this.attributeNameN = argN;
+            …
             codeBlock;
+
+            // Define the class methods
+            this.methodName = function () {
+                codeBlock;
+            }
         }
-    }
-    ```
-        -	Notice that the method definition invokes the keyword function, but unlike the use of function for the class name, this invocation of function is unnamed.
+        ```
+        -	Notice that the method definition invokes the keyword `function`, but unlike the use of `function` for the class name, this invocation of `function` is unnamed.
 
     -	For example:
         ```
@@ -63,7 +63,7 @@
         j.party();
         s.party();
         ```
-            -	the keyword “new” is used to create a new instance of a class – i.e., create an object
+            -	the keyword `new` is used to create a new instance of a class – i.e., create an object
 
 
 -	You may see JavaScript  code that has different syntax from the form and example above – be aware that the code may have been written with ES6
